@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/bid_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入书号"
+        />
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/bookName_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入书名"
+        />
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/author_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入作者"
+        />
+</LinearLayout>
