@@ -16,7 +16,7 @@ allprojects {
 ```
 ## 2、在项目module中引入远程依赖
 ```
-api 'com.amitshekhar.android:debug-db:1.0.0'
+api 'com.ci123.library:db:0.0.1'
 ```
 ## 3、配置 litepal.xml
  在项目的assets文件夹中创建一个名为litepal.xml，然后拷贝下面的代码内容
@@ -217,9 +217,9 @@ DbManager.getInstance().getInsert().saveAll(list);
 DbManager.getInstance().getInsert().saveAllAsync(list, new InsertListener(){
  @Override
   public void onFinsh(boolean isSuccess) {
-  
+
 }
-  
+
 });
 ```
 ## 4、更新数据
@@ -233,7 +233,7 @@ DbManager.getInstance().getInsert().saveAllAsync(list, new InsertListener(){
  * @param conditions 条件例：("bid= ? and author =?","1","张三"),
  */
 public void updateAllAsync(final UpdateListener listener, String... conditions) {
-  
+
 }
 /**
 *同步修改
@@ -275,7 +275,7 @@ DbManager.getInstance().getDelete().deleteAll(Book.class)；
 DbManager.getInstance().getDelete().deleteAllAsync(Book.class, new DeleteListener() {
     @Override
     public void result(int value) {
-        
+
     }
 });
 ```
@@ -309,7 +309,7 @@ List<Book.class> list = DbManager.getInstance().getDbQuery().findAll(Book.class)
 DbManager.getInstance().getDbQuery().findAllAsync(Book.class, new QueryListener() {
     @Override
     public <T> void Result(final List<T> list) {
-       
+
     }
 });
 ```
@@ -322,7 +322,7 @@ DbManager.getInstance().getDbQuery().where("bookName = ? and author =?", "数学
         .findAsync(Book.class, new QueryListener() {
             @Override
             public <T> void Result(List<T> list) {
-               
+
                 }
             }
         });
@@ -337,11 +337,11 @@ DbManager.getInstance().getDbQuery().where("bookName = ? and author =?", "数学
 DbManager.getInstance().getDbQuery().where("bid < ? and author =?", "3", "张三").order("bookName").findAsync(Book.class, new QueryListener() {
             @Override
             public <T> void Result(List<T> list) {
-               
+
                 }
             }
         });
-        
+
 /**同步方式*/
 List<Book.class> list = DbManager.getInstance().getDbQuery().where("bid < ? and author =?", "3", "张三").order("bookName").find（Book.class）;
 ```
@@ -403,15 +403,15 @@ DbManager.getInstance().registDbListener(new DbListener() {
  * @param context 应用的context
  * */
 public void init(Context context) {
- 
+
 }
 
 public DbQuery getDbQuery() {
-  
+
 }
 
 public DbDelete getDelete() {
-  
+
 }
 
 public DbInsert getInsert() {return DbInsert.getInstance();
@@ -424,7 +424,7 @@ public DbInsert getInsert() {return DbInsert.getInstance();
  * @param modelClassNames model类名
  */
 public void useNewDb(String dbName, int version, String... modelClassNames) {
- 
+
 }
 
 /**
@@ -433,14 +433,14 @@ public void useNewDb(String dbName, int version, String... modelClassNames) {
  * @param dbName 数据库名
  */
 public void useNewXmlDb(String dbName) {
-  
+
 }
 
 /**
  * 使用默认数据库（litepal.xml定义的数据库也就是默认数据库）
  */
 public void useDefaultDb() {
- 
+
 }
 
 /**
@@ -448,11 +448,11 @@ public void useDefaultDb() {
  * @param dbName 数据库名
  */
 public void deleteDb(String dbName) {}
-  
+
 
 /**
  * 数据库创建更新检测方法
- * @param listener 
+ * @param listener
  */
 public void registDbListener(final DbListener listener) {
   /**
