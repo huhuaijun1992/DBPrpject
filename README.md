@@ -87,6 +87,7 @@ DbManager.getInstance().init(getApplicationContext());
 # 二、使用方式
 ## 1、创建表
 首先定义模型，例如：您有一个模型Book,这个模型可以定义如下(必须继承DbSupport类)：
+注意定义的模型不能有id字段，此字段数据表会默认生成
 
 ```
 public class Book extends DbSupport {
